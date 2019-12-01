@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "910092752393",
+    "firebase_url": "https://aplikasi-pengingat-cba7c.firebaseio.com",
+    "project_id": "aplikasi-pengingat-cba7c",
+    "storage_bucket": "aplikasi-pengingat-cba7c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910092752393:android:d2f34c33a8440902e34ad8",
+        "android_client_info": {
+          "package_name": "com.bzen.aplikasi_pengingat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910092752393-spvspj0hr330g7c8epboet7omd03vv4n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bzen.aplikasi_pengingat",
+            "certificate_hash": "c64c114097b5b43f8b9ffeb9e401cd62b8843656"
+          }
+        },
+        {
+          "client_id": "910092752393-c626taho5bpjnpv4ro849i0df05vmk7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKU_H5DTHnBi_TAK-eBp0pUK6MqLo2HB0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910092752393-c626taho5bpjnpv4ro849i0df05vmk7t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

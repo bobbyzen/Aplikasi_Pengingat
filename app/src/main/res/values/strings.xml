@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Aplikasi Pengingat</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="nav_car">CAR</string>
+    <string name="nav_pengingat">PENGINGAT</string>
+    <string name="nav_log">LOG</string>
+    <string name="nav_user">USER</string>
+    <string-array name="kategori">
+        <item>
+            PAJAK
+        </item>
+        <item>
+            OLI
+        </item>
+        <item>
+            SEMUA
+        </item>
+    </string-array>
+
+    <string-array name="warna">
+        <item>
+            HIJAU
+        </item>
+        <item>
+            KUNING
+        </item>
+        <item>
+            PUTIH KOMBINASI
+        </item>
+        <item>
+            MERAH
+        </item>
+    </string-array>
+
+    <string-array name="stsMobil">
+        <item>
+            NONAKTIF
+        </item>
+        <item>
+            AKTIF
+        </item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

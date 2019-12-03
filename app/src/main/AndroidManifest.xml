@@ -3,21 +3,14 @@
     package="com.bzen.aplikasi_pengingat">
 
     <uses-feature
-        android:name="android.hardware.camera"
-        android:required="false" />
-    <uses-feature
-        android:name="android.hardware.camera.any"
+        android:name="android.hardware.camera2"
         android:required="true" />
-    <uses-feature
-        android:name="android.hardware.camera.autofocus"
-        android:required="false" />
 
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
 
     <application
         android:allowBackup="true"
@@ -26,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PilihMobil"></activity>
+        <activity android:name=".ui.user.DetailUserActivity"></activity>
+        <activity android:name=".PilihMobil" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.mobil.DetailMobilActivity" />
@@ -44,12 +38,12 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.bzen.aplikasi_pengingat.fileprovider"
+            android:authorities="com.example.android.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_path" />
+                android:resource="@xml/file_path" />
         </provider>
     </application>
 

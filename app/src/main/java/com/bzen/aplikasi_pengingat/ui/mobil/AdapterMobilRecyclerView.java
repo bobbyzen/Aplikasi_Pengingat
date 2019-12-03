@@ -8,31 +8,41 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bzen.aplikasi_pengingat.R;
+import com.bzen.aplikasi_pengingat.ui.user.User;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class AdapterMobilRecyclerView extends RecyclerView.Adapter<AdapterMobilRecyclerView.ViewHolder> {
-
+    private FirebaseDatabase database;
     private ArrayList<Mobil> daftarMobil;
     private Context context;
+    ArrayList<User> daftarUser;
 
-    public AdapterMobilRecyclerView(ArrayList<Mobil> mobils, Context ctx){
+    public AdapterMobilRecyclerView(ArrayList<Mobil> mobils, Context ctx) {
         daftarMobil = mobils;
         context = ctx;
+        this.database = database;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-
+        TextView tvNamaUser;
         TextView tvPlat;
         CardView cvMobil;
 
         ViewHolder(View v) {
             super(v);
             tvPlat = v.findViewById(R.id.tvPlat);
+            tvNamaUser = v.findViewById(R.id.tvNamaSupir);
             cvMobil = v.findViewById(R.id.cv_mobil);
         }
     }
@@ -49,8 +59,9 @@ public class AdapterMobilRecyclerView extends RecyclerView.Adapter<AdapterMobilR
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         final String plat = daftarMobil.get(position).getPlat();
+
         holder.cvMobil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,7 +78,10 @@ public class AdapterMobilRecyclerView extends RecyclerView.Adapter<AdapterMobilR
             }
         });
         holder.tvPlat.setText(plat);
+
+
     }
+
 
     @Override
     public int getItemCount() {

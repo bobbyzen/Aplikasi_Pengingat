@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:910092752393:android:d2f34c33a8440902e34ad8",
+        "mobilesdk_app_id": "1:910092752393:android:ca313f4170201820e34ad8",
         "android_client_info": {
           "package_name": "com.bzen.aplikasi_pengingat"
         }
@@ -19,6 +19,43 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.bzen.aplikasi_pengingat",
+            "certificate_hash": "c64c114097b5b43f8b9ffeb9e401cd62b8843656"
+          }
+        },
+        {
+          "client_id": "910092752393-c626taho5bpjnpv4ro849i0df05vmk7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKU_H5DTHnBi_TAK-eBp0pUK6MqLo2HB0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910092752393-c626taho5bpjnpv4ro849i0df05vmk7t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910092752393:android:143d37921e6d703ce34ad8",
+        "android_client_info": {
+          "package_name": "com.bzen.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910092752393-tcveci4fmkdbghenh7i5b5i9ql474tc7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bzen.test",
             "certificate_hash": "c64c114097b5b43f8b9ffeb9e401cd62b8843656"
           }
         },

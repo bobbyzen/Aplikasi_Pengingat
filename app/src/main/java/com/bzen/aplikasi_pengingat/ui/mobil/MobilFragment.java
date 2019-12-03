@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,7 +27,7 @@ import java.util.ArrayList;
 public class MobilFragment extends Fragment {
     private DatabaseReference database;
     private RecyclerView rvView;
-    private RecyclerView.Adapter adapter;
+    private AdapterMobilRecyclerView adapter;
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<Mobil> daftarMobil;
 
@@ -34,6 +35,12 @@ public class MobilFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mobil, container, false);
 
+
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         rvView = view.findViewById(R.id.rv_mobil);
         rvView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext());
@@ -55,6 +62,7 @@ public class MobilFragment extends Fragment {
                 rvView.setAdapter(adapter);
             }
 
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 System.out.println(databaseError.getDetails()+" " + databaseError.getMessage());
@@ -70,6 +78,5 @@ public class MobilFragment extends Fragment {
                 startActivity(tmbh_mobil);
             }
         });
-        return view;
     }
 }

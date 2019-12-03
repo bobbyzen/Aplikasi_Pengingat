@@ -34,7 +34,7 @@
         </item>
     </string-array>
 
-    <string-array name="stsMobil">
+    <string-array name="status">
         <item>
             NONAKTIF
         </item>

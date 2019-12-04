@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class AdapterMobilRecyclerView extends RecyclerView.Adapter<AdapterMobilRecyclerView.ViewHolder> {
-    private FirebaseDatabase database;
+    private DatabaseReference database;
     private ArrayList<Mobil> daftarMobil;
     private Context context;
     ArrayList<User> daftarUser;
@@ -31,7 +31,6 @@ public class AdapterMobilRecyclerView extends RecyclerView.Adapter<AdapterMobilR
     public AdapterMobilRecyclerView(ArrayList<Mobil> mobils, Context ctx) {
         daftarMobil = mobils;
         context = ctx;
-        this.database = database;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -79,7 +78,22 @@ public class AdapterMobilRecyclerView extends RecyclerView.Adapter<AdapterMobilR
         });
         holder.tvPlat.setText(plat);
 
+        database = FirebaseDatabase.getInstance().getReference();
+        database.child("user").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot nds : dataSnapshot.getChildren()){
+                    User user = nds.getValue(User.class);
+                    if(user.getPlatmobil().equals(plat)){
+                        holder.tvNamaUser.setText(user.getNama());
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
     }
 
 

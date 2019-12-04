@@ -47,15 +47,14 @@ public class MobilFragment extends Fragment {
         rvView.setLayoutManager(layoutManager);
 
         database = FirebaseDatabase.getInstance().getReference();
-
         database.child("mobil").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 daftarMobil = new ArrayList<>();
                 for (DataSnapshot noteDataSnapShot : dataSnapshot.getChildren()){
+//                    daftarMobil.clear();
                     Mobil mobil = noteDataSnapShot.getValue(Mobil.class);
                     mobil.setKey(noteDataSnapShot.getKey());
-
                     daftarMobil.add(mobil);
                 }
                 adapter = new AdapterMobilRecyclerView(daftarMobil, getContext());
@@ -73,7 +72,6 @@ public class MobilFragment extends Fragment {
         fabTambahMobil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Tambah Mobil", Toast.LENGTH_SHORT).show();
                 Intent tmbh_mobil = new Intent(getContext(), TambahMobilActivity.class);
                 startActivity(tmbh_mobil);
             }
